@@ -20,4 +20,6 @@ public class RequirementWrapper
     [Header("Resource - Status")]
     public StatusActionType StatusRequiredAction = StatusActionType.None;
     public StatusType Status = StatusType.None;
+    public TargetType StatusTarget = TargetType.None;
+
 }

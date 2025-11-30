@@ -59,6 +59,13 @@ public enum StatusType
     Burn,
 }
 
+public enum TargetType
+{
+    None,
+    Self,
+    Enemy,
+}
+
 [CreateAssetMenu(menuName = "JARD/Card/CardData", fileName = "000_Type_Cardname")]
 public class CardData : ScriptableObject
 {
@@ -83,6 +90,8 @@ public class CardData : ScriptableObject
     public List<ActionType> AssociatedActions { get { return _associatedActions; } }
 
     [Header("Effects")]
+    [SerializeField] private EffectActivationType _effectActivationType = EffectActivationType.OnSet;
+    public EffectActivationType EffectActivationType { get { return _effectActivationType; } }
     [SerializeField] private List<CardEffectData> _effects = new List<CardEffectData>();
     public List<CardEffectData> Effects { get { return _effects; } }
 }
